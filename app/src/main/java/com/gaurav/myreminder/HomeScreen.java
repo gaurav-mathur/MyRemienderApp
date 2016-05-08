@@ -12,11 +12,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
+
+import com.gaurav.myreminder.dummy.DummyContent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeScreen extends AppCompatActivity {
+public class HomeScreen extends AppCompatActivity implements ItemFragment.OnListFragmentInteractionListener {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -48,10 +51,12 @@ public class HomeScreen extends AppCompatActivity {
 
     }
 
+
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new FirstFragment(), "Home");
-        adapter.addFragment(new SeconfFragment(), "My List");
+        adapter.addFragment(new SeconfFragment(), "All");
+        adapter.addFragment(new ItemFragment(), "Active");
         viewPager.setAdapter(adapter);
     }
 
@@ -82,6 +87,13 @@ public class HomeScreen extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
+
     }
+
+        @Override
+        public void onListFragmentInteraction(DummyContent.DummyItem item){
+            Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
+        }
+
 
 }
