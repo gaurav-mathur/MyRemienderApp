@@ -1,4 +1,4 @@
-package com.gaurav.myreminder;
+package com.gaurav.myreminder.Screens;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,10 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gaurav.myreminder.CustomAdapter.MyItemRecyclerViewAdapter;
+import com.gaurav.myreminder.R;
 import com.gaurav.myreminder.dummy.DummyContent;
 import com.gaurav.myreminder.dummy.DummyContent.DummyItem;
-
-import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -21,7 +21,7 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class ItemFragment extends Fragment {
+public class ThirdFragment extends Fragment {
 
     // TODO: Customize parameters
     private int mColumnCount = 1;
@@ -32,7 +32,7 @@ public class ItemFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ItemFragment() {
+    public ThirdFragment() {
     }
 
     @Override

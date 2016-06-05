@@ -1,12 +1,14 @@
-package com.gaurav.myreminder;
+package com.gaurav.myreminder.CustomAdapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.gaurav.myreminder.ItemFragment.OnListFragmentInteractionListener;
+import com.gaurav.myreminder.R;
+import com.gaurav.myreminder.Screens.ThirdFragment.OnListFragmentInteractionListener;
 import com.gaurav.myreminder.dummy.DummyContent.DummyItem;
 
 import java.util.List;
@@ -38,6 +40,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
+        if(position%2==0)
+            holder.mIcon.setImageResource(R.mipmap.ic_launcher);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,12 +65,14 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public final TextView mIdView;
         public final TextView mContentView;
         public DummyItem mItem;
+        public final ImageView mIcon;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.id);
             mContentView = (TextView) view.findViewById(R.id.content);
+            mIcon = (ImageView) view.findViewById(R.id.icon);
         }
 
         @Override

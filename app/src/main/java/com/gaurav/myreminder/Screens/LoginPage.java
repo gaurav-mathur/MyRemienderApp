@@ -1,4 +1,4 @@
-package com.gaurav.myreminder;
+package com.gaurav.myreminder.Screens;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -29,6 +29,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.gaurav.myreminder.Database.BaseDatabase;
+import com.gaurav.myreminder.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,11 +65,14 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    BaseDatabase db = new BaseDatabase(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
+        boolean userDet= db.insertUserDetail("Gaurav","8879165727","gaurav_hbk@rediffmail.com","gm_hbk","Mumbai");
+        System.out.println("User Inserted="+userDet);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();

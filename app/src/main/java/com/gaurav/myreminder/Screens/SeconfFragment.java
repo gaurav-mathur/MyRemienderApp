@@ -1,12 +1,19 @@
-package com.gaurav.myreminder;
+package com.gaurav.myreminder.Screens;
 
-import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import com.gaurav.myreminder.AllReminderEntry;
+import com.gaurav.myreminder.CustomAdapter.AllReminderAdapter;
+import com.gaurav.myreminder.R;
+
+import java.util.ArrayList;
 
 
 /**
@@ -26,7 +33,8 @@ public class SeconfFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    ArrayList<AllReminderEntry> allEntry = new ArrayList();
+    AllReminderEntry entry;
     //private OnFragmentInteractionListener mListener;
 
     public SeconfFragment() {
@@ -58,13 +66,37 @@ public class SeconfFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }*/
+        for (int i=0;i<5;i++){
+            entry = new AllReminderEntry(String.valueOf(i),true);
+            allEntry.add(entry);
+
+            for (int j=0;j<3;j++){
+                entry = new AllReminderEntry(String.valueOf(j),false);
+                allEntry.add(entry);
+            }
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_seconf, container, false);
+        View view = inflater.inflate(R.layout.fragment_seconf, container, false);
+        ListView listView = (ListView) view.findViewById(R.id.listview);
+        AllReminderAdapter adapter = new AllReminderAdapter(this.getContext(),allEntry);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                // TODO Auto-generated method stub
+                System.out.println("Clicked="+allEntry.get(position).mName);
+                Intent viewDetail= new Intent(SeconfFragment.super.getContext(),ViewReminderDetail.class);
+                startActivity(viewDetail);
+            }
+        });
+        return view;
     }
 
 /*    // TODO: Rename method, update argument and hook method into UI event

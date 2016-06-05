@@ -1,16 +1,17 @@
-package com.gaurav.myreminder;
+package com.gaurav.myreminder.Screens;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-public class AddReminder extends AppCompatActivity {
+import com.gaurav.myreminder.R;
+
+public class ViewReminderDetail extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_reminder);
+        setContentView(R.layout.activity_view_reminder_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     @Override
