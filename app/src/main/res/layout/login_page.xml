@@ -9,7 +9,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Screens.LoginPage">
-
     <!-- Login progress -->
     <ProgressBar
         android:id="@+id/login_progress"

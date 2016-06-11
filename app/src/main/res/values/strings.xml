@@ -16,7 +16,6 @@
         completions."
     </string>
     <string name="title_activity_home_screen">My Reminder</string>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="home_quote_fragment">You Forget! No Problem,We remember for you</string>
     <string name="title_activity_addreminder">Add Reminder</string>

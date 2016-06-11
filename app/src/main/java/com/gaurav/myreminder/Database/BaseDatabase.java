@@ -98,6 +98,5 @@ public class BaseDatabase extends SQLiteOpenHelper {
         }
 
         return mCursor;
-
     }
 }
