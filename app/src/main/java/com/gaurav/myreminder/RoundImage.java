@@ -38,7 +38,6 @@ public class RoundImage extends Drawable {
     public void draw(Canvas canvas) {
         canvas.drawOval(mRectF, mPaint);
     }
-
     @Override
     protected void onBoundsChange(Rect bounds) {
         super.onBoundsChange(bounds);

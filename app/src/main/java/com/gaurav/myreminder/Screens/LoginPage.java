@@ -71,7 +71,7 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
-        boolean userDet= db.insertUserDetail("Gaurav","8879165727","gaurav_hbk@rediffmail.com","gm_hbk","Mumbai");
+        boolean userDet= db.insertUserDetail("Gaurav","8879165727","gaurav_hbk@rediffmail.com","gaur65727","Mumbai");
         System.out.println("User Inserted="+userDet);
         boolean userCred=db.insertLocalUserCredential("gaurav_hbk@rediffmail.com","8879165727","admin");
         System.out.println("Cred Inserted="+userCred);

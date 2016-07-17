@@ -23,4 +23,34 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <string-array name="category">
+        <item>Service</item>
+        <item>Warranty</item>
+    </string-array>
+
+    <string-array name="sub_category">
+        <item>Home Appliances</item>
+        <item>Electronics</item>
+        <item>Automobile</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="service_cycle">
+        <item>Not Applicable</item>
+        <item>Monthly</item>
+        <item>Quaterly</item>
+        <item>HalfYearly</item>
+        <item>Yearly</item>
+    </string-array>
+
+    <string-array name="warranty_period">
+        <item>Not Applicable</item>
+        <item>3 Months</item>
+        <item>6 Months</item>
+        <item>1 Year</item>
+        <item>2 Year</item>
+        <item>3 Year</item>
+        <item>4 Year</item>
+        <item>5 Year</item>
+    </string-array>
 </resources>

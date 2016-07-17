@@ -8,4 +8,6 @@
     <color name="colorAccent">#303F9F</color>
     <color name="Home_Background">#bbc2da</color>
     <color name="transparent">#80000000</color>
+    <color name="colorTAB">#c8e8ff</color>
+    <color name="textcolor">#000000</color>
 </resources>
